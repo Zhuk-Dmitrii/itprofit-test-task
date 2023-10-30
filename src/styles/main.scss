@@ -1,0 +1,185 @@
+// обнуляющие стили
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+// корневой элемент (обертка)
+#root {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   padding: 0 15px;
+}
+
+// форма
+.form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-width: 500px;
+   width: 100%;
+   padding: 20px 10px;
+   border: 1px solid black;
+   border-radius: 10px;
+   background-color: rgb(201, 201, 201);
+   box-shadow: 0px 0px 10px 3px rgb(207, 207, 207);
+}
+
+.form-group {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.form-control {
+   padding: 10px 15px;
+   border: 1px solid rgb(139, 139, 139);
+   border-radius: 5px;
+   font-size: 18px;
+}
+
+.form-control:focus {
+   outline: 2px solid gray;
+}
+
+.form-error {
+   color: red;
+   font-size: 14px;
+   margin-top: 5px;
+}
+
+label {
+   font-size: 20px;
+   line-height: 30px;
+   font-weight: 700;
+}
+
+#message {
+   resize: none;
+}
+
+// кнопка отправки формы
+.form-button {
+   width: 100%;
+   padding: 10px 15px;
+   text-align: center;
+   font-size: 24px;
+   line-height: 30px;
+   font-weight: 700;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: rgb(0, 170, 0);
+}
+
+.form-button:hover {
+   background: rgb(0, 140, 0);
+}
+
+.form-button:active {
+   box-shadow: inset 0 0 10px 2px rgb(0, 109, 0);
+   font-size: 20px;
+   transition: all 0.1s;
+}
+
+// модальное окно
+.modal-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.3s ease;
+   z-index: 9999;
+}
+
+.modal {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(0);
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.7s ease, transform 0.5s ease;
+}
+
+.modal-content {
+   max-width: 400px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.modal-text {
+   padding: 20px 0;
+}
+
+.modal-overlay.open {
+   opacity: 1;
+   visibility: visible;
+}
+
+.modal.open {
+   opacity: 1;
+   visibility: visible;
+   transform: translate(-50%, -50%) scale(1.5);
+}
+
+// кнопка открытия модального окна
+.open-modal {
+   width: 300px;
+   display: block;
+   padding: 10px 20px;
+   margin-top: 20px;
+   background-color: rgb(46, 46, 255);
+   color: #fff;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 18px;
+   line-height: 24px;
+}
+
+.open-modal:hover {
+   background: blue;
+}
+
+.open-modal:active {
+   font-size: 16px;
+   transition: all 0.1s;
+}
+
+// кнопка закрытия модального окна
+.close-modal {
+   width: 100px;
+   display: inline-block;
+   padding: 5px 20px;
+   background-color: gray;
+   color: #000;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-top: 10px;
+   font-size: 14px;
+   line-height: 20px;
+}
+
+.close-modal:hover {
+   background: rgb(111, 111, 111);
+}
+
+.close-modal:active {
+   font-size: 12px;
+   transition: all 0.1s;
+}
